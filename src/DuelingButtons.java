@@ -28,25 +28,25 @@ public class DuelingButtons implements ActionListener {
 
 	private void createUI() {
 		// 1. Add the panel to the frame
-
+frame.add(panel);
 		// 2. Make the frame visible
-
+frame.setVisible(true);
 		// 3. Set the text of the leftButton to "Click me!"
-
+leftButton.setText("Cick me");
 		// 4. Set the text of the rightButton to "Click me!"
-
+rightButton.setText("Cick me");
 		// 5. Add an action listener to the leftButton
-
+leftButton.addActionListener(this);
 		// 6. Add an action listener to the rightButton
-
+rightButton.addActionListener(this);
 		// 7. Add the leftButton to the panel
-
+panel.add(leftButton);
 		// 8. Add the rightButton to the panel
-
+panel.add(rightButton);
 		// 9. Pack the frame
-
+frame.pack();
 		// 10. Set the title of the frame to "Demanding Buttons"
-
+frame.setTitle("Demanding Buttons");
 	}
 
 	@Override
@@ -55,12 +55,25 @@ public class DuelingButtons implements ActionListener {
 		
 		
 		/* If the buttonPressed was the leftButton....*/
+		if(buttonPressed.equals(leftButton)) {
+			
+			rightButton.setText("No Click me");
+			rightButton.setPreferredSize(BIG);
+			leftButton.setText("click me");
+			leftButton.setPreferredSize(SMALL);
+		}
 			// Set the text of the rightButton to "No, click Me!"
 			// Set the PREFERRED size of the rightButton to BIG
 			// Set the text of the leftButton to "Click Me!"
 			// Set the PREFERRED size of the leftButton to SMALL
 		
-		
+if(buttonPressed.equals(rightButton)) {
+			
+			leftButton.setText("No Click me");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setText("click me");
+			rightButton.setPreferredSize(SMALL);
+		}
 		/* If the buttonPressed was the rightButton, do the opposite. */
 		
 
